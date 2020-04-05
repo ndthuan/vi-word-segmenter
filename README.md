@@ -5,7 +5,7 @@ HTTP wrapper of the excellent VnCoreNLP library.
 # Build Instruction
 
 * Clone https://github.com/ndthuan/VnCoreNLP - it's the forked version of the library
-* cd into VnCoreNLP and run `mvn install` to compile and install it locally
+* cd into VnCoreNLP and run `mvn -Plib install` to compile and install it locally
 * Go back to this repo, run `docker-build.sh` to build a Docker image.
 
 # Docker
