@@ -4,13 +4,19 @@ HTTP wrapper of the excellent VnCoreNLP library.
 
 # Build Instruction
 
-* Clone https://github.com/ndthuan/VnCoreNLP - it's the forked version of the library
-* cd into VnCoreNLP and run `mvn -Plib install` to compile and install it locally
-* Go back to this repo, run `docker-build.sh` to build a Docker image.
+```shell script
+docker build -t [your:tag] .
+```
 
 # Docker
 
 Prebuilt Docker images can be found at https://hub.docker.com/r/ndthuan/vi-word-segmenter.
+
+# Limitations
+
+The underlying library is not thread safe and it's quite big to make improvements myself. For now the workaround is limiting number of threads to 1 in server config. In this case, it's `server.tomcat.max-threads=1` in Spring Boot's application.properties.
+
+If you want to serve multiple requests, just launch multiple Docker containers and use some load balancer to dispatch the requests. 
 
 # API Usage Examples
 
