@@ -16,7 +16,11 @@ Prebuilt Docker images can be found at https://hub.docker.com/r/ndthuan/vi-word-
 
 The underlying library is not thread safe and it's quite big to make improvements myself. For now the workaround is limiting number of threads to 1 in server config. In this case, it's `server.tomcat.max-threads=1` in Spring Boot's application.properties.
 
-If you want to serve multiple requests, just launch multiple Docker containers and use some load balancer to dispatch the requests. 
+If you want to serve concurrent requests, just launch multiple Docker containers and use some load balancer.
+
+# Golang Client
+
+https://github.com/ndthuan/go-vi-wordseg-client
 
 # API Usage Examples
 
