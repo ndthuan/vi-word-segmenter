@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.ndthuan.nlp</groupId>
     <artifactId>vi-word-segmenter</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.2</version>
     <packaging>jar</packaging>
     <name>vi-word-segmenter</name>
     <description>Service for word segmentation, POS/NER/DEP tagging with VnCoreNLP backend.</description>
