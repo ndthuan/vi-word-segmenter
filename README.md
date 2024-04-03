@@ -14,7 +14,7 @@ Prebuilt Docker images can be found at https://hub.docker.com/r/ndthuan/vi-word-
 
 Usage example:
 ```shell script
-docker run --rm -p8080:8080 ndthuan/vi-word-segmenter:latest
+docker run --rm -p8080:8080 ndthuan/vi-word-segmenter:0.0.3
 ```
 
 # Client Libraries

@@ -11,8 +11,12 @@ SERVICE_NAME=$(./mvnw -Dexec.executable='echo' -Dexec.args='${project.artifactId
 SERVICE_VERSION=$(./mvnw -Dexec.executable='echo' -Dexec.args='${project.version}' --non-recursive exec:exec -q)
 DOCKER_IMAGE="ndthuan/$SERVICE_NAME:$SERVICE_VERSION"
 
-docker build -t "$DOCKER_IMAGE" .
+# docker buildx create --name builder
+# docker buildx use builder
+# docker buildx inspect --bootstrap
 
 if [ "$1" == "push" ]; then
-  docker push "$DOCKER_IMAGE"
+  docker buildx build --platform linux/amd64,linux/arm64 --push -t "$DOCKER_IMAGE" .
+else
+  docker buildx build --platform linux/amd64,linux/arm64 -t "$DOCKER_IMAGE" .
 fi
